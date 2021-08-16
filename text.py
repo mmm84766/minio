@@ -26,7 +26,7 @@ size = content.getbuffer().nbytes
 
 try:
 	minioClient.put_object(bucket,key, content,size)
-	print("Done")
+	print("It is Done")
 
 	
 
