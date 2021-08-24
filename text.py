@@ -4,11 +4,11 @@ from minio.error import ResponseError
 from io import BytesIO
 
 
-host="192.168.43.74:9000"
+host='144.91.120.175:9000'
 
-access_key="minioadmin"
+access_key= 'minio'
 
-secret_key = "minioadmin"
+secret_key =  'ScalingWeb'
 
 
 minioClient = Minio(host, access_key=access_key, secret_key=secret_key, secure=False)
@@ -26,7 +26,8 @@ size = content.getbuffer().nbytes
 
 try:
 	minioClient.put_object(bucket,key, content,size)
-	print("It is Done")
-
+	print("Done")
 	
-
+except ResponseError as err:
+	print("error:", err)
+	
